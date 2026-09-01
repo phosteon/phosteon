@@ -6,6 +6,8 @@ Founder of [Phosteon](https://www.phosteon.com), a voice AI platform for e-comme
 
 **What makes it different:** the first voice AI platform running a realtime speech-to-speech model fully hosted in Europe, GDPR-compliant end to end. Live models are fast and natural but hard to make reliable; through deliberate tooling and engineering around the model, the platform delivers reproducible results at low latency while keeping every advantage of a live model.
 
+**Stack, in broad strokes:** Python agent runtime, realtime speech-to-speech model, SIP telephony, Postgres, serverless background jobs, React dashboard; every component runs in EU regions.
+
 **What I own:** solution architecture, data model, integrations (Shopify, Zendesk, Zoho CRM/Desk, TheFork, Slack, Stripe, webhooks, SMS), prompt and conversation design, structured testing, deployment, monitoring, incident response.
 
 ```mermaid
