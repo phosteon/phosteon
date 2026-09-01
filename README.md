@@ -4,18 +4,17 @@ Founder of [Phosteon](https://www.phosteon.com), a voice AI platform for e-comme
 
 **What the agents do:** answer customer calls 24/7, identify callers, look up orders, resolve standard requests from a knowledge base, create structured tickets, and hand over to humans with full context.
 
-**What I own:** solution architecture, data model, integrations (Shopify, Zendesk, Zoho CRM/Desk, TheFork, Slack, Stripe, webhooks, SMS), prompt and conversation design, structured testing, deployment, monitoring, incident response.
+**What makes it different:** the first voice AI platform running a realtime speech-to-speech model fully hosted in Europe, GDPR-compliant end to end. Live models are fast and natural but hard to make reliable; through deliberate tooling and engineering around the model, the platform delivers reproducible results at low latency while keeping every advantage of a live model.
 
-**Stack, high level:** Python agent runtime on LiveKit Agents, realtime speech-to-speech model, SIP telephony (Twilio, DIDWW), Supabase/Postgres, Google Cloud Run, React dashboard on Cloudflare Pages, Stripe billing. EU-hosted, GDPR-compliant.
+**What I own:** solution architecture, data model, integrations (Shopify, Zendesk, Zoho CRM/Desk, TheFork, Slack, Stripe, webhooks, SMS), prompt and conversation design, structured testing, deployment, monitoring, incident response.
 
 ```mermaid
 flowchart LR
-    A[Inbound call] --> B[SIP trunk]
-    B --> C[LiveKit SIP]
-    C --> D[Agent runtime<br/>tools loaded per agent from the database]
-    D --> E[External tools<br/>Shopify / Zendesk / Zoho / knowledge base]
-    D --> F[Post-call pipeline<br/>outcome classification, ticket creation,<br/>email capture, QA monitor]
-    F --> G[Dashboard]
+    A[Inbound call] --> B[Telephony]
+    B --> C[Realtime agent<br/>tools loaded per customer]
+    C --> D[Customer systems<br/>orders, help desk, CRM, knowledge base]
+    C --> E[Post-call pipeline<br/>outcome classification, ticket creation,<br/>email capture, quality monitoring]
+    E --> F[Customer dashboard]
 ```
 
 **Before Phosteon:** built a D2C brand from a EUR 10k bootstrap to a ~EUR 2M exit across eight European markets; enterprise IT at Ford Motor Company.
