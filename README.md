@@ -11,10 +11,14 @@ Founder of [Phosteon](https://www.phosteon.com), a voice AI platform for e-comme
 ```mermaid
 flowchart LR
     A[Inbound call] --> B[Telephony]
-    B --> C[Realtime agent<br/>tools loaded per customer]
-    C --> D[Customer systems<br/>orders, help desk, CRM, knowledge base]
-    C --> E[Post-call pipeline<br/>outcome classification, ticket creation,<br/>email capture, quality monitoring]
-    E --> F[Customer dashboard]
+    subgraph EU["Fully EU-hosted, GDPR-compliant end to end"]
+        direction LR
+        B --> C[Realtime agent<br/>deterministic tooling around the model:<br/>reproducible results, low latency]
+        M[Realtime speech-to-speech model<br/>natural dialogue, no STT/TTS chain] <--> C
+        C --> D[Customer systems<br/>orders, help desk, CRM, knowledge base]
+        C --> E[Post-call pipeline<br/>outcome classification, ticket creation,<br/>email capture, quality monitoring]
+        E --> F[Customer dashboard]
+    end
 ```
 
 **Before Phosteon:** built a D2C brand from a EUR 10k bootstrap to a ~EUR 2M exit across eight European markets; enterprise IT at Ford Motor Company.
